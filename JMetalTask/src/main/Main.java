@@ -14,6 +14,7 @@ public class Main {
 		int server = 100;
 		int spr = 24;
 		int rpd = 4;
+		int core=4;
 		double serverPP = 200;
 		double torPP = 500;
 		double aggPP = 1000;
@@ -25,7 +26,7 @@ public class Main {
 		double cpuCycle = 12e6;
 		ArrayList<Task> taskList = generateRandom(task);
 		TaskProblem tp = new TaskProblem(task, server, spr, rpd, serverPP,
-				torPP, aggPP, torLink, aggLink, cpuCycle, taskList);
+				torPP, aggPP, torLink, aggLink, cpuCycle, core, taskList);
 		TaskExperiment exp = new TaskExperiment(tp,taskList);
 		exp.algorithmNameList_ = new String[] { "NSGAII","IBEAD","MOCELL","gNSGAII","gIBEAD","gMOCELL" };
 		//exp.algorithmNameList_ = new String[]{"MOEAD"};
