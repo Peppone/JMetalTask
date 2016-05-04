@@ -13,7 +13,7 @@ import jmetal.util.JMException;
 import jmetal.util.PseudoRandom;
 import task.Task;
 
-public class GroupingCrossover extends Operator {
+public class TaskGroupingCrossover extends Operator {
 
 	/**
 	 * 
@@ -24,7 +24,7 @@ public class GroupingCrossover extends Operator {
 	private ArrayList<Task> task = null;
 
 	@SuppressWarnings("unchecked")
-	public GroupingCrossover(HashMap<String, Object> parameters)
+	public TaskGroupingCrossover(HashMap<String, Object> parameters)
 			 {
 		super(parameters);
 		if (!parameters.containsKey("crossoverProbability"))

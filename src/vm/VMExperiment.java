@@ -1,8 +1,8 @@
-package task;
+package vm;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import operator.TaskGroupingCrossover;
 import jmetal.core.Algorithm;
 import jmetal.core.Operator;
 import jmetal.experiments.Experiment;
@@ -17,18 +17,19 @@ import jmetal.operators.crossover.SinglePointCrossover;
 import jmetal.operators.mutation.MyRebalanceMutation;
 import jmetal.operators.selection.BinaryTournament;
 import jmetal.util.JMException;
+import operator.TaskGroupingCrossover;
+import task.Task;
 
+public class VMExperiment extends Experiment {
 
-public class TaskExperiment extends Experiment {
-
-	TaskProblem problem;
-	ArrayList<Task> task;
+	VMProblem problem;
+	ArrayList<VM> vm;
 	
-	public TaskExperiment(TaskProblem p, ArrayList<Task> task){
+	public VMExperiment(VMProblem p, ArrayList<VM> vm){
 		super();
-		super.experimentName_="TaskExperiment";
+		super.experimentName_="VMExperiment";
 		this.problem=p;
-		this.task= task;
+		this.vm= vm;
 	}
 	
 	@Override
@@ -46,7 +47,7 @@ public class TaskExperiment extends Experiment {
 			map.put("probability", 0.5);
 			map.put("mutationProbability",0.1);
 			map.put("serverNumber",(int)problem.getServerNumber());
-			map.put("taskList", task);
+			map.put("vmList", vm);
 			MyRebalanceMutation mutation=null;
 			
 			try {
